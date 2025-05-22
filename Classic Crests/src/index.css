@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accessibility styles */
+.high-contrast {
+  --color-primary: #E6B325;
+  --color-primary-hover: #FFD700;
+  --color-text: #000000;
+  --color-background: #FFFFFF;
+  --color-card-bg: #F8F8F8;
+  --color-contrast-border: #000000;
+}
+
+.high-contrast body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.high-contrast .bg-[#C5A572],
+.high-contrast .hover\:bg-\[\#B08E5C\]:hover,
+.high-contrast .hover\:bg-\[\#C5A572\]:hover {
+  background-color: var(--color-primary) !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast .text-\[\#C5A572\],
+.high-contrast .hover\:text-\[\#E3C28D\]:hover,
+.high-contrast .hover\:text-\[\#C5A572\]:hover {
+  color: var(--color-primary) !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-gray-100 {
+  background-color: var(--color-card-bg) !important;
+  border: 1px solid var(--color-contrast-border) !important;
+}
+
+.high-contrast img {
+  filter: contrast(1.2);
+}
+
+.high-contrast .text-gray-600,
+.high-contrast .text-gray-700 {
+  color: #000000 !important;
+}
+
+.high-contrast .border-gray-300 {
+  border-color: #000000 !important;
+}
+
+.high-contrast .focus\:ring-\[\#C5A572\]:focus {
+  --tw-ring-color: var(--color-primary) !important;
+  --tw-ring-opacity: 1 !important;
+}
+
+/* Large text styles */
+.large-text {
+  --text-scale: 1.25;
+}
+
+.large-text p,
+.large-text h1,
+.large-text h2,
+.large-text h3,
+.large-text h4,
+.large-text h5,
+.large-text h6,
+.large-text span,
+.large-text button,
+.large-text a,
+.large-text input,
+.large-text textarea,
+.large-text label,
+.large-text li {
+  font-size: calc(1em * var(--text-scale)) !important;
+  line-height: 1.5 !important;
+}
+
+/* Reduced motion styles */
+.reduced-motion * {
+  transition: none !important;
+  animation: none !important;
+}
+
+.reduced-motion .transition,
+.reduced-motion .transition-colors,
+.reduced-motion .hover\:scale-110:hover,
+.reduced-motion .group-hover\:scale-110:hover {
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Focus styles for better keyboard navigation */
+:focus-visible {
+  outline: 3px solid #C5A572 !important;
+  outline-offset: 2px !important;
+}
+
+.high-contrast :focus-visible {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Search dropdown animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#search-results-dropdown {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Product card animations */
+@keyframes expandCard {
+  from { opacity: 0.8; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.expanded-product-card {
+  animation: expandCard 0.3s ease-out;
+}
+
+/* Success message animation */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
